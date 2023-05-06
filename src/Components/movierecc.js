@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import backgroundImg from "../Assets/background.jpg";
 import "./movierecc.css";
+import Navbar from "./Navbar.js";
+import Footer from "./Footer.js";
 
 export default function MovieRecc() {
   // const [emotion, setEmotion] = useState();
@@ -35,9 +37,10 @@ export default function MovieRecc() {
   }, []);
 
   return (
+    
     <div
       style={{
-        backgroundImage: `url(${backgroundImg})`,
+        // backgroundImage: `url(${backgroundImg})`,
         backgroundSize: "111%",
         minHeight: "100vh",
         minWidth: "100vw",
@@ -48,13 +51,14 @@ export default function MovieRecc() {
         /*marginLeft:0*/
       }}
     >
+    <Navbar/>
+
       <h1
         className="text-3xl "
         style={{
           textAlign: "center",
           fontSize: "3rem",
           color: "black",
-          textShadow: "2px 2px 4px #000000",
         }}
       >
         Movie Recommendation System
@@ -66,7 +70,7 @@ export default function MovieRecc() {
         <button
           onClick={firstcall}
           style={{
-            background: "black",
+            background: "#6385dc",
             borderRadius: "0.5rem",
             padding: "0.5rem",
             color: "white",
@@ -126,6 +130,7 @@ export default function MovieRecc() {
             </div>
           );
         })}
+        <Footer/>
       </div>
     </div>
   );

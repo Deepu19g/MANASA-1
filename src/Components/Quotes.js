@@ -24,10 +24,10 @@ function Quotes() {
         })
     }
 return(
-    <>
-    <p>{text}</p>
-    <p>-{author}</p>
-    </>
+    <div className="qoute-section">
+    <p className="qoute-text">"{text}"</p>
+    <p className="qoute-author">-{author}</p>
+    </div>
 )
 }
 export default Quotes;
