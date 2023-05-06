@@ -1,0 +1,38 @@
+.signup-page {
+    margin: 0 20rem;
+    background-color: #909acb;
+    padding: .5rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.heading {
+    color: rgb(23, 23, 104);
+    font-size: 2.5rem;
+    margin: .5rem 0;
+}
+
+.form-item {
+    margin: .4rem 0;
+}
+
+
+.login-text {
+    margin: 1rem 0;
+}
+
+
+
+.button-login-style {
+    padding: .5rem 1rem;
+    background-color: rgb(73, 72, 144);
+    color: white;
+    border: none;
+    font-size: large;
+    font-weight: normal !important;
+}
+
+.link {
+    color: rgb(22, 22, 177);
+    text-decoration: underline;
+}

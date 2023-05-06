@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useUserAuth } from "../context/UserAuthContext";
+import "./Signup.css"
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -24,12 +25,13 @@ const Signup = () => {
 
   return (
     <>
-      <div className="p-4 box">
-        <h2 className="mb-3">MANASA</h2>
+      <div className="signup-page">
+        <h2 className="heading">MANASA</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
+            className="form-item"
               type="email"
               placeholder="Email address"
               onChange={(e) => setEmail(e.target.value)}
@@ -38,22 +40,24 @@ const Signup = () => {
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control
+            className="form-item"
               type="password"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
 
-          <div className="d-grid gap-2">
-            <Button variant="primary" type="Submit">
+          <div className="button">
+            <Button className="button-style" type="Submit">
               Sign up
             </Button>
           </div>
         </Form>
+        <div className=" login-text">
+        Already have an account? <Link to="/" className="link">Log In</Link>
       </div>
-      <div className="p-4 box mt-3 text-center">
-        Already have an account? <Link to="/">Log In</Link>
       </div>
+      
     </>
   );
 };

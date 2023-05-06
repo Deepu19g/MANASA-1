@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import Logo from "../Assets/Logo.png";
-import { BsCart2 } from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -12,13 +11,11 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
-import LiveTvIcon from '@mui/icons-material/LiveTv';
-import PsychologyIcon from '@mui/icons-material/Psychology';
-import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
-import HelpIcon from '@mui/icons-material/Help';
-import {Link}  from "react-router-dom";
-import Footer from "./Footer";
-import Mindful from "./Mindful";
+import LiveTvIcon from "@mui/icons-material/LiveTv";
+import PsychologyIcon from "@mui/icons-material/Psychology";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import HelpIcon from "@mui/icons-material/Help";
+
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
@@ -46,15 +43,20 @@ const Navbar = () => {
   return (
     <nav>
       <div className="nav-logo-container">
-        <img className="logo" src={Logo} alt=""/>
+        <a href="/home">
+          <img className="logo" src={Logo} alt="" />
+        </a>
       </div>
       <div className="navbar-links-container">
-       
         <a href="/MovieRecc">Movie </a>
-      
+
         <a href="/musicrec">Music</a>
+
+        <a className="primary-button" href="/">
+          Logout
+        </a>
         <a href="/Mindful">MindfulExercises</a>
-        <button className="primary-button">Log Out</button>
+        <a href="/"><button className="primary-button">Log Out</button></a>
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />

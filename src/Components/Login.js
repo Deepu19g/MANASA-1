@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import GoogleButton from "react-google-button";
 import { useUserAuth } from "../context/UserAuthContext";
+import "./Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -35,12 +35,13 @@ const Login = () => {
 
   return (
     <>
-      <div className="p-4 box">
-        <h2 className="mb-3">MANASA</h2>
+      <div className="signup-page">
+        <h2 className="heading">MANASA</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
+              className="form-item"
               type="email"
               placeholder="Email address"
               onChange={(e) => setEmail(e.target.value)}
@@ -49,29 +50,38 @@ const Login = () => {
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control
+              className="form-item"
               type="password"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
 
-          <div className="d-grid gap-2">
-            <Button variant="primary" type="Submit">
+          <div className="button">
+            <Button
+              className="button-login-style"
+              variant="primary"
+              type="Submit"
+            >
               Log In
             </Button>
           </div>
         </Form>
-        <hr />
-        <div>
-          <GoogleButton
-            className="g-btn"
+        <div className="g-class">
+          <Button
+            className="button-style"
             type="dark"
             onClick={handleGoogleSignIn}
-          />
+          >
+            Sign In with Google
+          </Button>
         </div>
-      </div>
-      <div className="p-4 box mt-3 text-center">
-        Don't have an account? <Link to="/signup">Sign up</Link>
+        <div className="login-text">
+          Don't have an account?{" "}
+          <Link to="/signup" className="link">
+            Sign up
+          </Link>
+        </div>
       </div>
     </>
   );

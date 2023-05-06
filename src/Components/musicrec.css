@@ -4,7 +4,9 @@ body {
     
 
 }
-
+.music-page{
+    margin:0 6rem
+}
 h1 {
     text-align: center;
     margin:2rem;
@@ -17,15 +19,19 @@ ul {
 }
 
 li {
-    background-color: rgb(125, 178, 192);
+    background-color:  #909acb;
+
+
     margin-top: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+
 li:hover {
-    background-color: #f2f2f2;
+    background-color: #aab1d5;
+
 }
 
 a {

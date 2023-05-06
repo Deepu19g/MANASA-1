@@ -110,7 +110,18 @@ nav {
   max-width: 700px;
 
 }
+.exercise
+{
+  
+  align-items: center;
+  display: flex;
+padding: 50px;
+}
+.title 
+{
+  background-color:#efc9fa;
 
+}
 .home-image-section {
   max-width: 600px;
   flex: 1;

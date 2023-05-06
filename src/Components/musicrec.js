@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./musicrec.css";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export default function MusicRecs() {
   // const [emotion, setEmotion] = useState();
@@ -33,21 +35,26 @@ export default function MusicRecs() {
     firstcall();
   }, []);
   return (
-    <div>
-      <h1>Music Recommendations for your mood</h1>
-      <ul>
-        {songs.map((song) => {
-          return (
-            <li>
-              <p class="song-name">{song["track"]}</p>
-              <p class="song-artist">{song["artist"]}</p>
-              <a href={song["url"]} class="song-url">
-                Listen here
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+    <div className="music-page">
+      <Navbar />
+
+      <div >
+        <h1>Music Recommendations for your mood</h1>
+        <ul>
+          {songs.map((song) => {
+            return (
+              <li>
+                <p class="song-name">{song["track"]}</p>
+                <p class="song-artist">{song["artist"]}</p>
+                <a href={song["url"]} class="song-url">
+                  Listen here
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <Footer />
     </div>
   );
 }

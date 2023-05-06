@@ -2,7 +2,6 @@ import React,{useState,useEffect} from "react"
 
 function Quotes() {
     const [text,setQuote] = useState('');
-    const [loading,setLoading] = useState(true);
     const [author,setAuthor]= useState('');
 
     useEffect(()=>{

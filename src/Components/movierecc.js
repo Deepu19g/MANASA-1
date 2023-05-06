@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import backgroundImg from "../Assets/background.jpg";
 import "./movierecc.css";
 import Navbar from "./Navbar.js";
 import Footer from "./Footer.js";
