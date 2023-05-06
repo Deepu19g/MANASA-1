@@ -18,7 +18,7 @@ CORS(app)
 def main(emotion):
 
     if (emotion == "Sad" or emotion == "sad"):
-        urlhere = 'https://www.imdb.com/search/title/title_type=movie&genres=romance,comedy&sort=num_votes,desc&explore=title_type,genres'
+        urlhere = 'https://www.imdb.com/search/title/?title_type=movie&genres=romance,comedy&sort=num_votes,desc&explore=title_type,genres'
     elif (emotion == "Happy" or emotion == "happy"):
         urlhere = 'https://www.imdb.com/search/title/?title_type=movie&genres=sci-fi,action&sort=num_votes,desc&explore=title_type,genres'
     elif (emotion == "Bored" or emotion == "bored"):

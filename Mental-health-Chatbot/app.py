@@ -48,14 +48,26 @@ def predict_class(sentence, model):
     return return_list
 def getResponse(ints, intents_json):
     tag = ints[0]['intent']
-    emotionfile=open("E:/MANASA-1/emo.txt","w")
-    list_of_intents = intents_json['intents']
     
+    list_of_intents = intents_json['intents']
+   
+    with open("E:/MANASA-1/emo.txt", "r+") as emotionfile:
+     for line in emotionfile:
+        var = line.strip()
+    
+   
     for i in list_of_intents:
         if(i['tag']== tag):
-            print (i['tag'])
+            emotionfile=open("E:/MANASA-1/emo.txt","w")
             
-            emotionfile.writelines(i['tag'])
+            try:
+                                            
+                emotionfile.writelines(i['emotion'])
+            except:
+                emotionfile.writelines(var)   
+                
+                
+                
             result = random.choice(i['responses'])
             emotionfile.close()
             break

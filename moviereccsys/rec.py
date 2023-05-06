@@ -1,7 +1,7 @@
 import pymongo
 
 # Create a MongoClient instance
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+client = pymongo.MongoClient("mongodb://localhost:27017")
 
 # Access the database and collection
 db = client["musicDB"]
@@ -31,7 +31,7 @@ def recommend_music(search_term):
     songs = list()
     # Query the collection
     results = collection.find({"seeds": {"$regex": search_term}})
-
+    print(results)
     # Loop through the results and print the first 5
     count = 0
     for result in results:
