@@ -35,26 +35,23 @@ export default function MusicRecs() {
     firstcall();
   }, []);
   return (
+    <>
     <div className="music-page">
       <Navbar />
-
       <div >
         <h1>Music Recommendations for your mood</h1>
         <ul>
-          {songs.map((song) => {
+          {songs && songs.map((song) => {
+            var src_string = `https://open.spotify.com/embed/track/${song['spotify_id']}?utm_source=generator`
+            console.log(src_string);
             return (
-              <li>
-                <p class="song-name">{song["track"]}</p>
-                <p class="song-artist">{song["artist"]}</p>
-                <a href={song["url"]} class="song-url">
-                  Listen here
-                </a>
-              </li>
+              <iframe title="title" src={src_string} width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             );
           })}
         </ul>
       </div>
       <Footer />
     </div>
+    </>
   );
 }

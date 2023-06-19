@@ -1,7 +1,8 @@
 import pymongo
+import random
 
 # Create a MongoClient instance
-client = pymongo.MongoClient("mongodb://localhost:27017")
+client = pymongo.MongoClient("mongodb://localhost:27017/musicDB")
 
 # Access the database and collection
 db = client["musicDB"]
@@ -33,11 +34,12 @@ def recommend_music(search_term):
     results = collection.find({"seeds": {"$regex": search_term}})
     print(results)
     # Loop through the results and print the first 5
-    count = 0
-    for result in results:
-        if count == 5:
-            break
+    result_list = list(results)
+    stop = len(result_list)-5
+    count = random.randrange(0, stop)
+    loopend = count+5
+    sub_result = result_list[count:loopend]
+    for result in sub_result:
         songs.append(
-            {'track': result['track'], 'artist': result['artist'], 'url': result['lastfm_url']})
-        count += 1
+            {'track': result['track'], 'artist': result['artist'], 'url': result['lastfm_url'],'spotify_id':result['spotify_id']})
     return songs

@@ -57,12 +57,13 @@ def getResponse(ints, intents_json):
     
    
     for i in list_of_intents:
+        print(i['tag'])
         if(i['tag']== tag):
             emotionfile=open("E:/MANASA-1/emo.txt","w")
             
             try:
                                             
-                emotionfile.writelines(i['emotion'])
+                emotionfile.writelines(i['tag'])
             except:
                 emotionfile.writelines(var)   
                 
